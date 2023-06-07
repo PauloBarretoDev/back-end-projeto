@@ -1,47 +1,37 @@
 package com.projetao.f1databasebackend.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-
+import javax.persistence.*;
+import java.util.List;
+@Entity
 public class Pais {
     @Id
     @GeneratedValue
-    private Long id;
-    private String nome_pais;
-    private String foto_pais;
-    @OneToOne(mappedBy = "pais")
-    private Piloto piloto;
+    private Long idPais;
+    private String nome;
+    private String foto;
 
-    public Long getId() {
-        return id;
+    public Long getIdPais() {
+        return idPais;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdPais(Long idPais) {
+        this.idPais = idPais;
     }
 
-    public String getNome_pais() {
-        return nome_pais;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNome_pais(String nome_pais) {
-        this.nome_pais = nome_pais;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getFoto_pais() {
-        return foto_pais;
+    public String getFoto() {
+        return foto;
     }
 
-    public void setFoto_pais(String foto_pais) {
-        this.foto_pais = foto_pais;
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
-    public Piloto getPiloto() {
-        return piloto;
-    }
-
-    public void setPiloto(Piloto piloto) {
-        this.piloto = piloto;
-    }
 }

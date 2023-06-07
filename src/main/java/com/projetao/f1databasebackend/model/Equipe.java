@@ -4,25 +4,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import java.util.List;
 
 @Entity
 public class Equipe {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Long idEquipe;
     private String nome;
     private String foto;
     private String lider;
-    @OneToOne(mappedBy = "equipe")
-    private Piloto piloto;
 
-    public Long getId() {
-        return id;
+    public Long getIdEquipe() {
+        return idEquipe;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdEquipe(Long idEquipe) {
+        this.idEquipe = idEquipe;
     }
 
     public String getNome() {
@@ -49,11 +48,4 @@ public class Equipe {
         this.lider = lider;
     }
 
-    public Piloto getPiloto() {
-        return piloto;
-    }
-
-    public void setPiloto(Piloto piloto) {
-        this.piloto = piloto;
-    }
 }

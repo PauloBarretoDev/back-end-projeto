@@ -7,25 +7,18 @@ public class Piloto {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Long idPiloto;
     private String foto;
     private String nome;
     private int vitorias;
+    private int paisId;
+    private int equipeId;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_pais", referencedColumnName = "id")
-    private Pais pais;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_equipe", referencedColumnName = "id")
-    private Equipe equipe;
-
-    public Long getId() {
-        return id;
+    public Long getIdPiloto() {
+        return idPiloto;
     }
-
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdPiloto(Long idPiloto) {
+        this.idPiloto = idPiloto;
     }
 
     public String getFoto() {
@@ -52,19 +45,19 @@ public class Piloto {
         this.vitorias = vitorias;
     }
 
-    public Pais getPais() {
-        return pais;
+    public int getPaisId() {
+        return paisId;
     }
 
-    public void setPais(Pais pais) {
-        this.pais = pais;
+    public void setPaisId(int paisId) {
+        this.paisId = paisId;
     }
 
-    public Equipe getEquipe() {
-        return equipe;
+    public int getEquipeId() {
+        return equipeId;
     }
 
-    public void setEquipe(Equipe equipe) {
-        this.equipe = equipe;
+    public void setEquipeId(int equipeId) {
+        this.equipeId = equipeId;
     }
 }

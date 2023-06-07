@@ -19,8 +19,8 @@ public class EquipeController {
         return equipeRepository.save(newEquipe);
     }
 
-    @GetMapping("/equipe/{id}")
-    List<Equipe> getAllPilotos(){
+    @GetMapping("/equipes")
+    List<Equipe> getAllEquipes(){
         return equipeRepository.findAll();
     }
 
@@ -37,12 +37,11 @@ public class EquipeController {
                 equipe.setNome(newEquipe.getNome());
                 equipe.setLider(newEquipe.getLider());
                 equipe.setFoto(newEquipe.getFoto());
-                equipe.setPiloto(newEquipe.getPiloto());
                 return equipeRepository.save(equipe);
             }).orElseThrow(() -> new EquipeNotFoundException(id));
     }
 
-    @DeleteMapping("/piloto/{id}")
+    @DeleteMapping("/equipe/{id}")
     String deleteEquipe(@PathVariable Long id){
         if(!equipeRepository.existsById(id)){
             throw new EquipeNotFoundException(id);

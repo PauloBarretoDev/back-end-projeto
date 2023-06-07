@@ -38,8 +38,8 @@ public class PilotoController {
                     piloto.setNome(newPiloto.getNome());
                     piloto.setVitorias(newPiloto.getVitorias());
                     piloto.setFoto(newPiloto.getFoto());
-                    piloto.setEquipe(newPiloto.getEquipe());
-                    piloto.setPais(newPiloto.getPais());
+                    piloto.setEquipeId(newPiloto.getEquipeId());
+                    piloto.setPaisId(newPiloto.getPaisId());
                     return pilotoRepository.save(piloto);
                 }).orElseThrow(()->new PilotoNotFoundException(id));
     }
